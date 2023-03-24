@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Task 1</title>
+</head>
+
+<body>
+	<script>
+	//використання рекурсивного алгоритму
+	function recursiveMethod(n){
+		return (n === 0) ? 1 : recursiveMethod(n-1)+(2*n)
+	}
+	document.write(`<p>X<sub>10</sub> = <span>${recursiveMethod(10)}</span></p>`)
+	//використання циклу
+	function notRecursiveMethod(n){
+		let x_n
+		if(n === 0) return 1
+		else {
+			let x_n_1 = 1
+			for(let i = 1; i <= n; i++){
+				x_n = x_n_1 + (2 * i)
+				x_n_1 = x_n
+			}
+		}
+		return x_n
+	}
+	document.write(`<p>X<sub>10</sub> = <span>${notRecursiveMethod(10)}</span></p>`)
+	</script>
+</body>
+</html>

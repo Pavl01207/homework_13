@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Task 3</title>
+</head>
+
+<body>
+	<script>
+		/*З використанням замикань розробити ітератор, тобто функцію, що буде поступово за окремими викликами видавати 
+		по одне значення від заданого мінімального до заданого максимального. Якщо значення досягне максимального, 
+		то наступним буде мінімальне значення. З використанням цієї функції реалізувати перебір номерів місяців.*/
+		function getMonth(startNumber, endNumber) {
+			let counterMonth = startNumber
+			function counter(){
+				if (counterMonth > endNumber) counterMonth = startNumber
+				return counterMonth++
+			}
+			return counter
+		}
+		let monthNumber = getMonth(1, 12)
+		//кожне значення виклику ітератора помістив у масив
+		function pushMonthInArray(number){
+			let arr = []
+			for(let i = 0; i < number; i++){
+				let month = monthNumber()
+				arr.push(month)
+			}
+			return arr
+		}
+		const array = pushMonthInArray(14)
+		document.write(`<p>Масив із значень викликів ітератора: <span>${array}</span>.</p>`)
+	</script>
+</body>
+</html>

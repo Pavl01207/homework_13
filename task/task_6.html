@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Task 6</title>
+</head>
+
+<body>
+	<script>
+		//Через 20 секунд перейти на сайт ukr.net. Для цього через 20 секунд після відкриття треба виконати команду
+		//створюємо функцію для переходу на іншу сторінку
+		function goToWeb(address){
+			return window.location.href = address
+		}
+		document.write('<p>Перехід на сайт <span>ukr.net</span> відбудеться через <span>20 секунд</span>.</p>')
+		//створюємо таймер
+		let goToTimeoutID = setTimeout(
+			goToWeb, 20000, 'https://www.ukr.net/'
+		)
+	</script>
+</body>
+</html>
